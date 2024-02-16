@@ -196,13 +196,6 @@ public class WebUI {
     String target = req.getTarget();
     String name = req.getLinkName();
 
-    if (route.contains("/")) {
-      resp.onError(Status.INVALID_ARGUMENT
-          .withDescription("Page page routes must not contain '/'")
-          .asRuntimeException());
-      return;
-    }
-
     if (target.endsWith("/")) {
       target.substring(0, target.length() - 1);
     }
